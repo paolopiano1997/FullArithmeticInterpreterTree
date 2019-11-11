@@ -10,7 +10,6 @@ import nodes.PotExp;
 
 public class WriteExpVisitor implements ExpVisitor{
 	private String currentExp = "";
-	private int level = 0;
 	
 	public String getResult() {
 		return currentExp;
@@ -22,7 +21,6 @@ public class WriteExpVisitor implements ExpVisitor{
 		e.getRight().accept(this);
 		String right = getResult();
 		currentExp =  "( "  + left + " " + e.myOp() + " " + right +  " )" ;
-		level++;
 	}
 	
 	@Override
